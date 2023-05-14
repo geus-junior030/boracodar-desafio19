@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root,
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1E1E1E;
+  color: #372D3B;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+strong {
+  font-size: 3rem;
+  line-height: 3.8rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: fit-content;
+  height: fit-content;
+  background: #FFFFFF;
+  border-radius: 40px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 56px;
+  gap: 70px;
+}
+
+.container.show {
+  animation: show-widget 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.container.hide {
+  animation: hide-widget 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes show-widget {
+  0% {
+    transform: scaleY(0) translateX(-50%);
+    transform-origin: 0% 100%;
+  }
+
+  100% {
+    transform: scaleY(1) translateX(-50%);
+    transform-origin: 0% 100%;
+  }
+}
+
+@keyframes hide-widget {
+  0% {
+    transform: scaleY(1) translateX(-50%);
+    transform-origin: 0% 100%;
+  }
+
+  100% {
+    transform: scaleY(0) translateX(-50%);
+    transform-origin: 0% 100%;
+  }
+}
+
+.drag-button {
+  outline: none;
+  border: 0;
+  background-color: #E5D8EA;
+  border-radius: 999px;
+  height: 15px;
+  width: 138px;
+  cursor: pointer;
+  transition: all .3s;
+  border: 1px solid transparent;
+}
+
+.drag-button:hover {
+  background-color: #dcc6e5;
+  border-color: #864293;
+}
+
+.container header {
+  display: flex;
+  flex-direction: column;
+}
+
+.container header strong span {
+  color: #864293;
+}
+
+.container main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+
+.container main img {
+  height: 120px;
+  width: fit-content;
+  object-fit: cover;
+}
+
+.container main .info-vehicle {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-contact {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 32px;
+  width: 100%;
+}
+
+.box-contact input {
+  flex: 1;
+  padding: 14px;
+  background: #F5EDF7;
+  border-radius: 24px;
+  border: 0;
+  outline: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.3rem;
+  color: #372D3B;
+  border: 1px solid transparent;
+}
+
+.box-contact input::placeholder {
+  color: #372D3B;
+}
+
+.box-contact input:hover,
+.box-contact input:active,
+.box-contact input:focus {
+  border-color: #864293;
+}
+
+.box-contact .actions {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 32px;
+  height: 100%;
+}
+
+.box-contact .actions button {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-content: center;
+}
+
+.box-contact .actions button img {
+  width: 32px;
+  height: 32px;
+}
+
+.box-contact .actions button:hover img {
+  width: 33px;
+  height: 33px;
+}
+
+.show-widget-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #864293;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all .3s;
+  border: 1px solid transparent;
+}
+
+.show-widget-button:hover {
+  background-color: #7b338a;
+}
+
+.show-widget-button img {
+  width: 40px;
+}
